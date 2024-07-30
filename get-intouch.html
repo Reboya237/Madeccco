@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - MADECC</title>
+  <link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+  <section id="contact">
+    <div class="container">
+      <h2 id="contact-title">Contact Us</h2>
+      <form id="contact-form" action="process.php" method="post">
+        <label for="name" id="contact-name-label">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email" id="contact-email-label">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message" id="contact-message-label">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit" id="contact-submit-button">Send Message</button>
+      </form>
+      <div id="form-response"></div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
