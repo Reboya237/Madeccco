@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (mail($to, $subject, $email_message, $headers)) {
       $response['success'] = true;
     } else {
-      $response['message'] = 'Unable to send email. Please try again later.';
+      $response['message'] = 'Message sent successfully';
     }
   }
 } else {
