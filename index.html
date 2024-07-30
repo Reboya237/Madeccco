@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MADECC Ltd - Modern Architectural Designs and Engineering Construction</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Reset some default styles */
+    body, h1, h2, p, ul, li, form, input, textarea, button {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+    }
+
+    header {
+        background: #333;
+        color: #fff;
+        padding: 10px 0;
+        position: relative;
+    }
+
+    .logo {
+        display: inline-block;
+    }
+
+    .menu-icon, .close-icon {
+        display: none;
+        font-size: 30px;
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+    }
+
+    .menu-icon {
+        left: 10px;
+    }
+
+    .close-icon {
+        left: 50px;
+    }
+
+    .lang-switcher {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    nav {
+        display: inline-block;
+        float: right;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    nav ul li {
+        margin: 5px;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+        background: #444;
+        border-radius: 5px;
+    }
+
+    section {
+        padding: 20px 0;
+    }
+
+    section#home {
+        background: #f4f4f4;
+    }
+
+    section#about, section#services, section#portfolio, section#testimonials, section#pricing, section#newsletter, section#blog, section#contact, section#privacy, section#terms, section#location {
+        background: #fff;
+    }
+
+    .sidebar {
+        float: left;
+        width: 20%;
+        padding: 20px;
+        background: #f4f4f4;
+        box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+        margin-right: 20px;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 10px;
+    }
+
+    .sidebar ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .service-item, .portfolio-item, .testimonial-item, .pricing-plan {
+        margin-bottom: 20px;
+    }
+
+    .service-item h3, .portfolio-item h3, .testimonial-item h4, .pricing-plan h3 {
+        margin-bottom: 10px;
+    }
+
+    footer {
+        background: #333;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .footer-logo {
+        margin-bottom: 10px;
+    }
+
+    .footer-links ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links ul li {
+        display: inline;
+        margin: 0 10px;
+    }
+
+    .footer-links ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .footer-contact {
+        margin-top: 10px;
+    }
+
+    footer a {
+        color: #fff;
+    }
+
+    form label {
+        display: block;
+        margin-top: 10px;
+    }
+
+    form input, form textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+    }
+
+    form button {
+        background: #333;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    form button:hover {
+        background: #555;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        header {
+            text-align: center;
+        }
+
+        .logo {
+            float: none;
+        }
+
+        .menu-icon, .close-icon {
+            display: block;
+        }
+
+        nav {
+            display: none;
+            width: 100%;
+            text-align: center;
+            float: none;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            background: #333;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        nav ul {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 10px;
+            padding: 0;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            padding: 10px;
+            background: #444;
+            border-radius: 5px;
+        }
+
+        .sidebar {
+            width: 100%;
+            float: none;
+            margin-bottom: 20px;
+        }
+    }
+
+    .menu-active nav {
+        display: block;
+    }
+
+    .hide {
+        display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h1 id="logo">MADECC Ltd</h1>
+      </div>
+      <span class="lang-switcher" onclick="switchLanguage()">EN</span>
+      <span class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></span>
+      <span class="close-icon hide" onclick="toggleMenu()"><i class="fas fa-times"></i></span>
+      <nav>
+        <ul>
+          <li><a href="#home" id="nav-home">Home</a></li>
+          <li><a href="#about" id="nav-about">About Us</a></li>
+          <li><a href="#services" id="nav-services">Services</a></li>
+          <li><a href="#portfolio" id="nav-portfolio">Portfolio</a></li>
+          <li><a href="#testimonials" id="nav-testimonials">Testimonials</a></li>
+          <li><a href="#pricing" id="nav-pricing">Pricing</a></li>
+          <li><a href="#blog" id="nav-blog">Blog</a></li>
+          <li><a href="#contact" id="nav-contact">Contact</a></li>
+          <li><a href="privacy.html" id="nav-privacy">Privacy Policy</a></li>
+          <li><a href="terms.html" id="nav-terms">Terms of Use</a></li>
+          <li><a href="conditions.html" id="nav-conditions">Conditions</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home">
+    <div class="container">
+      <h2 id="home-title">Welcome to MADECC Ltd</h2>
+      <p id="home-description">We provide modern architectural designs and engineering construction solutions.</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2 id="about-title">About Us</h2>
+      <p id="about-description">At MADECC Ltd, we are dedicated to delivering innovative architectural designs and high-quality construction services. Our team of experts ensures every project is executed with precision and excellence.</p>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <h2 id="services-title">Our Services</h2>
+      <div class="service-item">
+        <h3 id="service1-title">Architectural Design</h3>
+        <p id="service1-description">Creative and functional architectural designs tailored to your needs.</p>
+      </div>
+      <div class="service-item">
+        <h3 id="service2-title">Construction Management</h3>
+        <p id="service2-description">Efficient management of construction projects from start to finish.</p>
+      </div>
+      <div class="service-item">
+        <h3 id="service3-title">Engineering Solutions</h3>
+        <p id="service3-description">Innovative engineering solutions for complex construction challenges.</p>
+      </div>
+      <div class="service-item">
+        <h3 id="service4-title">Consulting Services</h3>
+        <p id="service4-description">Expert advice and consulting on all aspects of construction and design.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="container">
+      <h2 id="portfolio-title">Our Portfolio</h2>
+      <div class="portfolio-item">
+        <h3 id="project1-title">Project 1</h3>
+        <p id="project1-description">Brief description of the project.</p>
+      </div>
+      <div class="portfolio-item">
+        <h3 id="project2-title">Project 2</h3>
+        <p id="project2-description">Brief description of the project.</p>
+      </div>
+      <div class="portfolio-item">
+        <h3 id="project3-title">Project 3</h3>
+        <p id="project3-description">Brief description of the project.</p>
+      </div>
+      <div class="portfolio-item">
+        <h3 id="project4-title">Project 4</h3>
+        <p id="project4-description">Brief description of the project.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="container">
+      <h2 id="testimonials-title">Testimonials</h2>
+      <div class="testimonial-item">
+        <p id="testimonial1-text">"MADECC Ltd provided exceptional service and delivered our project on time and within budget. Highly recommended."</p>
+        <h4 id="testimonial1-author">- Client Name</h4>
+      </div>
+      <div class="testimonial-item">
+        <p id="testimonial2-text">"The team at MADECC Ltd went above and beyond to ensure our vision was realized. Their attention to detail was impressive."</p>
+        <h4 id="testimonial2-author">- Another Client Name</h4>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="container">
+      <h2 id="pricing-title">Pricing Plans</h2>
+      <div class="pricing-plan">
+        <h3 id="basic-plan-title">Basic Plan</h3>
+        <p id="basic-plan-price">$999</p>
+        <ul>
+          <li id="basic-plan-feature1">Feature 1</li>
+          <li id="basic-plan-feature2">Feature 2</li>
+          <li id="basic-plan-feature3">Feature 3</li>
+        </ul>
+      </div>
+      <div class="pricing-plan">
+        <h3 id="standard-plan-title">Standard Plan</h3>
+        <p id="standard-plan-price">$1999</p>
+        <ul>
+          <li id="standard-plan-feature1">Feature 1</li>
+          <li id="standard-plan-feature2">Feature 2</li>
+          <li id="standard-plan-feature3">Feature 3</li>
+          <li id="standard-plan-feature4">Feature 4</li>
+        </ul>
+      </div>
+      <div class="pricing-plan">
+        <h3 id="premium-plan-title">Premium Plan</h3>
+        <p id="premium-plan-price">$2999</p>
+        <ul>
+          <li id="premium-plan-feature1">Feature 1</li>
+          <li id="premium-plan-feature2">Feature 2</li>
+          <li id="premium-plan-feature3">Feature 3</li>
+          <li id="premium-plan-feature4">Feature 4</li>
+          <li id="premium-plan-feature5">Feature 5</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="newsletter">
+    <div class="container">
+      <h2 id="newsletter-title">Subscribe to Our Newsletter</h2>
+      <form action="mailto:info@madeccltd.online" method="post">
+        <label for="email" id="newsletter-email-label">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit" id="newsletter-submit-button">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="blog">
+    <div class="container">
+      <h2 id="blog-title">Blog</h2>
+      <article>
+        <h3 id="blog-post1-title">Blog Post Title</h3>
+        <p id="blog-post1-summary">Summary of the blog post...</p>
+        <a href="#" id="blog-post1-read-more">Read more</a>
+      </article>
+      <article>
+        <h3 id="blog-post2-title">Another Blog Post Title</h3>
+        <p id="blog-post2-summary">Summary of another blog post...</p>
+        <a href="#" id="blog-post2-read-more">Read more</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 id="contact-title">Contact Us</h2>
+      <form action="mailto:info@madeccltd.online" method="post" enctype="text/plain">
+        <label for="name" id="contact-name-label">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email" id="contact-email-label">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message" id="contact-message-label">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit" id="contact-submit-button">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="location">
+    <div class="container">
+      <h2 id="location-title">Our Location</h2>
+      <div id="map" style="height: 400px; width: 100%;"></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-logo">
+        <h1 id="footer-logo">MADECC Ltd</h1>
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="#home" id="footer-nav-home">Home</a></li>
+          <li><a href="#about" id="footer-nav-about">About Us</a></li>
+          <li><a href="#services" id="footer-nav-services">Services</a></li>
+          <li><a href="#portfolio" id="footer-nav-portfolio">Portfolio</a></li>
+          <li><a href="#testimonials" id="footer-nav-testimonials">Testimonials</a></li>
+          <li><a href="#pricing" id="footer-nav-pricing">Pricing</a></li>
+          <li><a href="#blog" id="footer-nav-blog">Blog</a></li>
+          <li><a href="#contact" id="footer-nav-contact">Contact</a></li>
+          <li><a href="privacy.html" id="footer-nav-privacy">Privacy Policy</a></li>
+          <li><a href="terms.html" id="footer-nav-terms">Terms of Use</a></li>
+          <li><a href="conditions.html" id="footer-nav-conditions">Conditions</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <p id="footer-copyright">© 2024 MADECC Ltd. All rights reserved.</p>
+        <p id="footer-contact-info">Contact us at: <a href="mailto:info@madeccltd.online" id="footer-contact-email">info@madeccltd.online</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+        document.querySelector('header').classList.toggle('menu-active');
+        document.querySelector('.menu-icon').classList.toggle('hide');
+        document.querySelector('.close-icon').classList.toggle('hide');
+    }
+
+    function switchLanguage() {
+        // Sample data for demonstration; in real usage, this could fetch language data from a server or file
+        var translations = {
+            en: {
+                'home-title': 'Welcome to MADECC Ltd',
+                'home-description': 'We provide modern architectural designs and engineering construction solutions.',
+                'about-title': 'About Us',
+                'about-description': 'At MADECC Ltd, we are dedicated to delivering innovative architectural designs and high-quality construction services. Our team of experts ensures every project is executed with precision and excellence.',
+                // Add more translations here...
+                'footer-copyright': '© 2024 MADECC Ltd. All rights reserved.',
+                'footer-contact-info': 'Contact us at: <a href="mailto:info@madeccltd.online">Contact Us</a>'
+            },
+            fr: {
+                'home-title': 'Bienvenue chez MADECC Ltd',
+                'home-description': 'Nous fournissons des solutions modernes en design architectural et en construction.',
+                'about-title': 'À propos de nous',
+                'about-description': 'Chez MADECC Ltd, nous sommes dédiés à offrir des conceptions architecturales innovantes et des services de construction de haute qualité. Notre équipe d\'experts veille à ce que chaque projet soit exécuté avec précision et excellence.',
+
+                // Add more translations here...
+                'footer-copyright': '© 2024 MADECC Ltd. Tous droits réservés.',
+                'footer-contact-info': 'Contactez-nous à : <a href="mailto:info@madeccltd.online">Contactez-nous</a>'
+            }
+            // Add more languages here...
+        };
+
+        var lang = document.querySelector('.lang-switcher').innerText === 'EN' ? 'fr' : 'en';
+        document.querySelector('.lang-switcher').innerText = lang === 'en' ? 'EN' : 'FR';
+
+        var elements = document.querySelectorAll('[id]');
+        elements.forEach(function(element) {
+            var key = element.id;
+            if (translations[lang][key]) {
+                if (element.tagName === 'P' || element.tagName === 'H1' || element.tagName === 'H2' || element.tagName === 'H3' || element.tagName === 'H4') {
+                    element.innerText = translations[lang][key];
+                } else if (element.tagName === 'A') {
+                    element.innerHTML = translations[lang][key];
+                }
+            }
+        });
+    }
+  </script>
+</body>
+</html>
