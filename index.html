@@ -863,5 +863,22 @@ l.parentNode.insertBefore(s, l);
 });
 
      </script>
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+    // Toggle the menu on click
+    const menuIcon = document.querySelector('.menu-icon');
+    const closeIcon = document.querySelector('.close-icon');
+    const menu = document.querySelector('.menu');
+
+    function toggleMenu() {
+        menu.classList.toggle('active');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+    }
+
+    menuIcon.addEventListener('click', toggleMenu);
+    closeIcon.addEventListener('click', toggleMenu);
+});
+</script>
 </body>
 </html>
