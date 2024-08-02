@@ -297,6 +297,33 @@
         display: inline-block;
         animation: fadeIn 2s ease-in-out;
     }
+	  /* Menu and icons styles */
+.menu-icon, .close-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    /* Other styling */
+}
+
+.menu.active {
+    display: grid;
+    /* Other styling */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Example styles for the menu items */
+.menu-item {
+    /* Styling for menu items */
+}
+
   </style>
 </head>
 <body>
@@ -818,6 +845,23 @@ l.parentNode.insertBefore(s, l);
 })({})
 </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9282938504392600"
-     crossorigin="anonymous"></script>
+     crossorigin="anonymous">
+	  document.addEventListener('DOMContentLoaded', function() {
+    // Toggle the menu on click
+    const menuIcon = document.querySelector('.menu-icon');
+    const closeIcon = document.querySelector('.close-icon');
+    const menu = document.querySelector('.menu');
+
+    function toggleMenu() {
+        menu.classList.toggle('active');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+    }
+
+    menuIcon.addEventListener('click', toggleMenu);
+    closeIcon.addEventListener('click', toggleMenu);
+});
+
+     </script>
 </body>
 </html>
