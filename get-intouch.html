@@ -17,18 +17,57 @@
       <h2 id="contact-title">Contact Us for more ℹ️</h2>
       <form
   action="https://formspree.io/f/mvgpwgar"
-  method="POST"
->
+  method="POST">
         <label for="name" id="contact-name-label">Name📛:</label>
         <input type="text" name="name" placeholder="full name" required>
-        <label for="phone" id="contact-phone-number-label">phone 🤳📱:</label>
+        <label for="phone">Phone 🤳📱:</label>
+            <select id="phone" name="phone">
+                <option value="1234567890">+237</option>
+                <option value="9876543210">+1</option>
+                <option value="1234567890">+44</option>
+                <option value="9876543210">+86</option>
+                <option value="1234567890">+61</option>
+                <option value="9876543210">+1</option>
+                <option value="1234567890">+91</option>
+                <option value="9876543210">+234</option>
+                <option value="1234567890">+63</option>
+                <option value="9876543210">+855</option>
+                <option value="1234567890">+56</option>
+                <option value="9876543210">+359</option>
+                <!-- Add more phone number options as needed -->
+            </select>
+      </label>
         <input type="phone" name="phone number" placeholder="+2️⃣3️⃣7️⃣6️⃣5️⃣0️⃣3️⃣2️⃣4️⃣9️⃣8️⃣1️⃣....." required>
+        <label for="country">Country:</label>
+            <select id="country" name="country">
+                <option value="USA">United States</option>
+                <option value="CA">Canada</option>
+                <option value="UK">United Kingdom</option>
+                <option value="CM">Cameroon</option>
+                <option value="NG">Nigeria</option>
+                <option value="SA">South Africa</option>
+                <option value="JP">Japan</option>
+                <option value="CH">China</option>
+                <option value="NGR">Niger</option>
+                <!-- Add more country options as needed -->
+            </select>
+          <label>Gender:</label><br>
+            <input type="radio" name="contact_method" value="email" checked required> Male<br>
+            <input type="radio" name="contact_method" value="phone" required> Female<br>
         <label for="email" id="contact-email-label">Email✉️:</label>
         <input type="email" name="email" placeholder="email address" required>
         <label for="password" id="contact-password-label">password🔑:</label>
         <input type="alphanumeric" name="password" placeholder="Aos755...." required>
         <label for="message" id="contact-message-label">Message📖🖋️:</label>
         <textarea name="message" placeholder="HOW CAN WE HELP OR ASSIST YOU???" required></textarea>
+        <label for="privacy-policy-checkbox">
+              <input type="checkbox" id="privacy-policy-checkbox" name="privacy-policy" required>
+              I agree to the <a href="privacy.html" target="_blank" required>Privacy Policy</a>
+            </label>
+            <label for="terms-checkbox">
+              <input type="checkbox" id="terms-checkbox" name="terms" required>
+              I agree to the <a href="terms.html" target="_blank" required>Terms of Use</a>
+            </label>
         <button type="submit" id="contact-submit-button">sUbmiT Message</button>
       </form>
       
