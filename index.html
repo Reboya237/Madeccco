@@ -46,6 +46,7 @@
     .logo {
         display: inline-block;
 	border: border-box;
+	box-shadow: inner-shadow;
     }
 
     .menu-icon, .close-icon {
@@ -61,21 +62,12 @@
     }
 
     .close-icon {
-        left: 50px;
-    }
-
-    .lang-switcher {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 16px;
-        cursor: pointer;
-        color: #fff;
+        left: 10px;
     }
 
     nav {
         display: inline-block;
-        float: right;
+        float: left;
     }
 
     nav ul {
@@ -290,13 +282,13 @@
     }
 	  /* Menu and icons styles */
 .menu-icon, .close-icon {
-    font-size: 24px;
+    font-size: 50px;
     cursor: pointer;
 }
 
 .menu {
     display: none;
-    grid-template-columns: repeat(1, 4fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     /* Other styling */
 }
