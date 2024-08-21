@@ -840,24 +840,15 @@
     document.querySelector('.menu-icon').addEventListener('click', toggleMenu);
     document.querySelector('.close-icon').addEventListener('click', toggleMenu);
     document.querySelector('.lang-switcher').addEventListener('click', switchLanguages;
-  </script>
-  <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Toggle the menu on click
-            const menuIcon = document.querySelector('.menu-icon');
-            const closeIcon = document.querySelector('.close-icon');
-            const menu = document.querySelector('.menu');
+    function toggleMenu() {
+        document.body.classList.toggle('menu-open');
+    }
 
-            function toggleMenu() {
-                menu.classList.toggle('active');
-                menuIcon.classList.toggle('hidden');
-                closeIcon.classList.toggle('hidden');
-            }
-
-            menuIcon.addEventListener('click', toggleMenu);
-            closeIcon.addEventListener('click', toggleMenu);
-        });
-    </script>
+    function switchLanguage() {
+        // Implement your language switcher functionality here
+        alert('Language switched!');
+    }
+</script>
 	<script>
         (function(cyj){
             var d = document,
