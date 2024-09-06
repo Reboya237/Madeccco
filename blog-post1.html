@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MADECC Blog Post</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 10px;
+            min-height: 70px;
+            border-bottom: #bbb 1px solid;
+        }
+
+        header h1 {
+            text-align: center;
+            margin: 0;
+        }
+
+        .post {
+            background: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .post h2 {
+            margin-top: 0;
+        }
+
+        .post p {
+            margin: 0 0 20px;
+        }
+
+        .read-more {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .read-more:hover {
+            background: #555;
+        }
+
+        .hidden-content {
+            display: none;
+        }
+
+        .contact-info {
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        .contact-info h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>MADECC Blog</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="post">
+            <h2>Building the Future: MADECC’s Commitment to Innovative Construction Solutions</h2>
+            <p>At MADECC, our mission is to revolutionize the construction industry with cutting-edge solutions and exceptional service. As a leading construction company in Cameroon, we are dedicated to transforming architectural concepts into reality through a blend of modern design principles and advanced construction techniques.</p>
+            <p>Our expertise extends across various sectors, including residential, commercial, and industrial construction. We take pride in our ability to handle complex projects with a focus on quality, efficiency, and sustainability. By incorporating the latest technologies and adhering to the highest standards of craftsmanship, we ensure that every project not only meets but exceeds our clients' expectations.</p>
+            <p>One of the key aspects of our approach is our commitment to sustainability. At MADECC, we believe that building responsibly means considering the environmental impact of our projects. We utilize eco-friendly materials, energy-efficient practices, and innovative design solutions to create spaces that are not only functional but also environmentally conscious.</p>
+            <p>Our comprehensive project management services ensure that every phase of construction is meticulously planned and executed. From the initial design consultation to the final walkthrough, our team works closely with clients to ensure clear communication and successful project outcomes. We understand that every project is unique, and we tailor our services to meet the specific needs and goals of each client.</p>
+            <p class="hidden-content">We invite you to explore the range of services we offer and discover how MADECC can help bring your vision to life. Whether you are looking to build a new home, renovate an existing property, or undertake a large-scale commercial project, our team of experts is here to provide you with the support and expertise you need.</p>
+            <button class="read-more" onclick="toggleContent()">Read More</button>
+        </div>
+
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>If you have any questions or would like to discuss a potential project, please don’t hesitate to reach out:</p>
+            <p>Email: <a href="mailto:infomadeccconstruction@gmail.com">infomadeccconstruction@gmail.com</a></p>
+            <p>Phone 1: <a href="tel:+237683316486">+237683316486</a></p>
+            <p>Phone 2: <a href="tel:+237650320971">+237650320971</a></p>
+            <p>Website: <a href="https://www.madeccltd.online" target="_blank">www.madeccltd.online</a></p>
+        </div>
+    </div>
+
+    <script>
+        function toggleContent() {
+            var content = document.querySelector('.hidden-content');
+            var button = document.querySelector('.read-more');
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                button.textContent = 'Read Less';
+            } else {
+                content.style.display = 'none';
+                button.textContent = 'Read More';
+            }
+        }
+    </script>
+</body>
+</html>
