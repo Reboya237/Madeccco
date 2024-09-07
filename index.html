@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdPGzkqAAAAAFHH1fn3cm7mE0VPIv6QsREPZ6xx"></script>
     <meta name="description" content="MADECC (Modern Architectural Designs and Engineering Construction Company) specializes in innovative architectural design, building construction, civil engineering, and structural solutions in Cameroon. Our services include residential and commercial projects, infrastructure development, sustainable building practices, project management, foundation testing, soil analysis, and eco-friendly construction solutions. Contact us for modern building designs and engineering services that bring your vision to life.">
     <meta name="keywords" content="modern architectural design, building construction Cameroon, engineering construction services, structural engineering, civil engineering, construction project management, residential construction, commercial construction services, building contractors, innovative building designs, sustainable construction, soil analysis, foundation testing, project scheduling services, steel structure construction, HVAC system design, landscape architecture, road construction, urban planning, eco-friendly building solutions, green building construction, building material suppliers, interior design services, building renovation, custom home builders, foundation engineering, urban infrastructure development, low-cost housing, high-rise building construction, energy-efficient designs, residential property development, prefabricated buildings, affordable housing, building maintenance, construction cost estimation, 
  Modern architectural design
@@ -392,7 +392,7 @@ At MADECC, we believe that modern architectural design is about more than just c
   <section id="contact">
     <div class="container">
       <h2 id="contact-title">Reach US</h2>
-      <form id="contact-form" action="https://formspree.io/f/mvgpwgar" method="post">
+      <form id="contact-form" action="https://formspree.io/f/xnnaroeo" method="post">
 	<div class="g-recaptcha" data-sitekey="6Lf1CTkqAAAAABZTvFOI_R0xzvkR85Ez-TLcI9tK" data-action="submit message"></div>
       <br/>
         <label for="name" id="contact-name-label">name📛:</label>
@@ -448,9 +448,80 @@ At MADECC, we believe that modern architectural design is about more than just c
 <script>
     function toggleMenu() {
         document.body.classList.toggle('menu-open');
-    }
-
-    
+    }  
 </script>
+
+	
+
+	<script src="https://www.google.com/recaptcha/api.js?render=6LdPGzkqAAAAAFHH1fn3cm7mE0VPIv6QsREPZ6xx"></script>
+
+	<script>
+  function onClick(e) {
+    e.preventDefault();
+    grecaptcha.enterprise.ready(async () => {
+      const token = await grecaptcha.enterprise.execute('6LdPGzkqAAAAAFHH1fn3cm7mE0VPIv6QsREPZ6xx',{action:'form_submit'});
+    });
+  }
+</script>
+
+	
+<script>
+  function submitForm(event) {
+    event.preventDefault();
+    
+    grecaptcha.execute();
+  }
+</script>
+
+
+	<script>
+  grecaptcha.ready(function() {
+    grecaptcha.execute();
+  });
+
+  function submitForm(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    grecaptcha.execute();
+  }
+
+  function onSubmit(e) {
+    e.preventDefault();
+    
+    grecaptcha.execute();
+  }
+
+  function onReCAPTCHAResponse(token) {
+    const expectedAction = 'submit_form'; // Action you expect
+
+    // Prepare data to send to your server
+    const data = {
+      event: {
+        token: token,
+        expectedAction: expectedAction,
+        siteKey: '6LdPGzkqAAAAAFHH1fn3cm7mE0VPIv6QsREPZ6xx'
+      }
+    };
+
+    // Send the data to your server
+    fetch('/your-server-endpoint', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+      // Handle success
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      // Handle error
+    });
+  }
+</script>
+
 </body>
 </html>
