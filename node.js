@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 async function verifyRecaptcha(token) {
-    const secretKey = 'your_secret_key';  // Your reCAPTCHA secret key
+    const secretKey = '6LdPGzkqAAAAAMUfZ7Wqj9iwD7PFLL8P4ity0y7P';  // Your reCAPTCHA secret key
     const url = 'https://www.google.com/recaptcha/api/siteverify';
     
     try {
