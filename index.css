@@ -1,348 +1,411 @@
-   /* Reset some default styles */
-    body, h1, h2, p, ul, li, form, input, textarea, button {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+@import url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css');
+/* Reset some default styles */
+h1, h2, p, ul, li, form, input, textarea, button {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-	background-color: pinck;
-	background-type: cover;
-	border: border-box;
-    }
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-image: url('bg\ \(1\).JPG');
+    background-size: cover;
+    border: border-box;
+}
 
-    title span{
-        font-size: bold;
-        color: yellow;
-        border: border-box;
-        box-sizing: 20px;
-        box-shadow: inner-shadow, solid;
-    }
+title span{
+    font-size: bold;
+    color: yellow;
+    border: border-box;
+    box-sizing: 20px;
+    box-shadow: inner-shadow, solid;
+}
 
-   /* Optional: Add some basic styling */
-        .map-container {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-	  
+/* Optional: Add some basic styling */
+    .map-container {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+    }
+  
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .1rem;
+    background-image: url('bg img 10.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 50px rgb(252, 5, 5);
+    border-radius: 30px;
+    margin: 0 15px 0 15px;
+}
+
+nav {
+    display: inline-block;
+    float: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 5px;
+    color: rgb(13, 17, 235);
+}
+
+nav ul li a {
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    background: #444;
+    border-radius: 30px;
+    box-shadow: inset 0 0 50px rgba(168, 36, 36, 0.884);
+}
+
+header nav ul li a  {
+    color: rgb(13, 17, 235);
+    font-weight: 800; 
+}
+
+header nav ul li a:hover  {
+    color: rgba(235, 13, 13, 0.808); 
+}
+
+.logo {
+    display: inline-block;
+    border: border-box;
+    border-radius: 10px;
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.menu-icon, .close-icon {
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    align-items: center;
+    top: 20px;
+    color: rgb(7, 8, 85);
+}
+
+.menu-icon {
+    left: 30px;
+}
+
+.close-icon {
+    left: 30px;
+}
+
+section {
+    padding: 20px 0;
+    border: border-box;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 150px rgba(0,0,0,0.1);
+}
+
+section#home {
+    background: #fff;
+    background-image: url('img1\ \(23\).jpg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 60px 0 60px;
+    border-radius: 0 100px;
+}
+
+section#about, section#services, section#portfolio, section#testimonials, section#pricing, section#newsletter, section#blog, section#contact, section#privacy, section#terms, section#location {
+    background: rgb(2, 1, 1);
+    border: 0 solid rgb(238, 185, 10);
+    box-shadow: 0 0 150px rgba(0,0,0,0.1);
+    margin: 0px 10px 10px 25px;
+    border-radius: 20px;
+    box-shadow: inset 0 0 70px rgba(8, 24, 241, 0.884);
+}
+
+.sidebar {
+    float: left;
+    width: 20%;
+    padding: 20px;
+    background: #f4f4f4;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    margin-right: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.service-item, .portfolio-item, .testimonial-item, .pricing-plan {
+    margin-bottom: 20px;
+}
+
+.service-item h3, .portfolio-item h3, .testimonial-item h4, .pricing-plan h3 {
+    margin-bottom: 10px;
+}
+
+footer {
+    background: #333;
+    color: #b00afd;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 0 120px 0 120px;
+}
+
+.footer-logo {
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    display: inline;
+    margin: 0 10px;
+    background-color: rgba(27, 201, 21, 0.877);
+    border-radius: 20px;
+}
+
+.footer-links ul li:hover {
+    background-color: rgb(252, 5, 5);
+    border-radius: 20px;
+    transition: .5s;
+    font-style: italic;
+    text-underline-position: below;
+}
+
+.footer-links ul li a {
+    color: rgb(9, 4, 248);
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.footer-contact {
+    margin-top: 10px;
+}
+
+footer a {
+    color: #fff;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 30px;
+}
+
+form button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 30px;
+    margin: 0 200px 0 200px;
+    margin-top: 20px;
+}
+
+form button:hover {
+    background-color: rgb(7, 8, 85);
+    border-radius: 30px;
+}
+
+form button:hover {
+    background: #555;
+}
+
+/* Responsive Design or Styles */
+@media (max-width: 50px) {
     header {
-        background: #333;
-        color: #fff;
-        padding: 10px 0;
-        position: relative;
+        text-align: center;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .logo {
-        display: inline-block;
-	border: border-box;
-	box-shadow: inner-shadow;
+        float: none;
+        text-align: center;
+        display: flex;
     }
 
     .menu-icon, .close-icon {
-        display: none;
-        font-size: 30px;
-        cursor: pointer;
-        position: absolute;
-        top: 10px;
-    }
-
-    .menu-icon {
-        left: 10px;
-    }
-
-    .close-icon {
-        left: 10px;
+        display: block;
+        justify-content: center;
+        margin-bottom: 10px;
     }
 
     nav {
-        display: inline-block;
-        float: left;
+        display: none;
+        width: 100%;
+        text-align: center;
+        float: none;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background: #333;
+        z-index: 1000;
+        padding: 20px;
     }
 
     nav ul {
-        list-style: none;
-        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 3 columns */
+        gap: 10px;
         padding: 0;
-        display: flex;
-        flex-wrap: wrap;
+        list-style: none;
     }
 
     nav ul li {
-        margin: 5px;
+        margin: 0;
     }
 
     nav ul li a {
         color: #fff;
-        text-decoration: none;
-        display: block;
         padding: 10px;
         background: #444;
         border-radius: 5px;
     }
 
-    section {
-        padding: 20px 0;
-    }
-
-    section#home {
-        background: #f4f4f4;
-    }
-
-    section#about, section#services, section#portfolio, section#testimonials, section#pricing, section#newsletter, section#blog, section#contact, section#privacy, section#terms, section#location {
-        background: #fff;
-    }
-
     .sidebar {
-        float: left;
-        width: 20%;
-        padding: 20px;
-        background: #f4f4f4;
-        box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-        margin-right: 20px;
-    }
-
-    .sidebar ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .sidebar ul li {
-        margin-bottom: 10px;
-    }
-
-    .sidebar ul li a {
-        text-decoration: none;
-        color: #333;
-        font-weight: bold;
-    }
-
-    .service-item, .portfolio-item, .testimonial-item, .pricing-plan {
+        width: 100%;
+        float: none;
         margin-bottom: 20px;
     }
-
-    .service-item h3, .portfolio-item h3, .testimonial-item h4, .pricing-plan h3 {
-        margin-bottom: 10px;
-    }
-
-    footer {
-        background: #333;
-        color: #fff;
-        padding: 10px 0;
-        text-align: center;
-    }
-
-    .footer-logo {
-        margin-bottom: 10px;
-    }
-
-    .footer-links ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .footer-links ul li {
-        display: inline;
-        margin: 0 10px;
-    }
-
-    .footer-links ul li a {
-        color: #fff;
-        text-decoration: none;
-    }
-
-    .footer-contact {
-        margin-top: 10px;
-    }
-
-    footer a {
-        color: #fff;
-    }
-
-    form label {
-        display: block;
-        margin-top: 10px;
-    }
-
-    form input, form textarea {
-        width: 100%;
-        padding: 8px;
-        margin-top: 5px;
-    }
-
-    form button {
-        background: #333;
-        color: #fff;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-    }
-
-    form button:hover {
-        background: #555;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        header {
-            text-align: center;
-        }
-
-        .logo {
-            float: none;
-        }
-
-        .menu-icon, .close-icon {
-            display: block;
-	    justify-content: center;
-        }
-
-        nav {
-            display: none;
-            width: 100%;
-            text-align: center;
-            float: none;
-            position: absolute;
-            top: 50px;
-            left: 0;
-            background: #333;
-            z-index: 1000;
-            padding: 20px;
-        }
-
-        nav ul {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 columns */
-            gap: 10px;
-            padding: 0;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin: 0;
-        }
-
-        nav ul li a {
-            color: #fff;
-            padding: 10px;
-            background: #444;
-            border-radius: 5px;
-        }
-
-        .sidebar {
-            width: 100%;
-            float: none;
-            margin-bottom: 20px;
-        }
-    }
-
-    .menu-active nav {
-        display: block;
-    }
-
-    .hide {
-        display: none;
-    }
-    h1 span{
-	    color: yellow;
-	    text-transformation: .5s;
-    }
-    p a span{
-	    text-color: blue;
-	    color: yellow;
-	    cursor: pointer;
-    }
-    h2 span{
-	    text-color: yellow;
-	    color: yellow;
-    }
-    /* Animations */
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-
-    h1, h2, p, a, li, label, input, button, textarea {
-        animation: fadeIn 2s ease-in-out;
-    }
-
-    h1 span, h2 span, p span, a span, li span, label span, input span, button span, textarea span {
-        display: inline-block;
-        animation: fadeIn 2s ease-in-out;
-    }
-	  /* Menu and icons styles */
-.menu-icon, .close-icon {
-    font-size: 50px;
-    cursor: pointer;
 }
 
-.menu {
+
+
+.menu-active nav {
+    display: block;
+}
+
+.hide {
     display: none;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    /* Other styling */
+}
+h1 span{
+    color: yellow;
+    text-transform: .5s;
+}
+p a span{
+    text-decoration: blue;
+    color: yellow;
+    cursor: pointer;
+}
+h2 span{
+    transition: .5s;
+    color: yellow;
+}
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h1, h2, p, a, li, label, input, button, textarea {
+    animation: fadeIn 2s ease-in-out;
+}
+
+h1 span, h2 span, p span, a span, li span, label span, input span, button span, textarea span {
+    display: inline-block;
+    animation: fadeIn 2ss ease-in-out;
+}
+  /* Menu and icons styles */
+.menu-icon, .close-icon {
+font-size: 50px;
+cursor: pointer;
+}
+
+
+.menu {
+display: none;
+grid-template-columns: repeat(4, 1fr);
+gap: 10px;
+/* Other styling */
 }
 
 .menu.active {
-    display: grid;
-    /* Other styling */
+display: grid;
+/* Other styling */
 }
 
 .hidden {
-    display: none;
+display: none;
 }
 
-/* Example styles for the menu items */
-	.menu-item {
-    /* Styling for menu items */
-	}
 
+/* Styling for menu items */
 
-	.menu-icon, .close-icon {
-            font-size: 24px;
-            cursor: pointer;
-            display: inline-block;
-            padding: 10px;
-        }
+.menu-icon, .close-icon {
+        font-size: 24px;
+        cursor: pointer;
+        display: inline-block;
+        padding: 10px;
+    }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: none;
-            flex-wrap: wrap;
-        }
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+        flex-wrap: wrap;
+    }
 
-        nav ul li {
-            flex: 1 1 25%;
-            text-align: center;
-            padding: 10px 0;
-            background-color: #f4f4f4;
-            border: 1px solid #ddd;
-            margin: 0;
-        }
+    nav ul li {
+        flex: 1 1 25%;
+        text-align: center;
+        padding: 10px 0;
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        margin: 0;
+    }
 
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-        }
+    nav ul li a {
+        text-decoration: none;
+        color: #333;
+    }
 
-        .close-icon {
-            display: none;
-        }
+    .close-icon {
+        display: none;
+    }
 
-        /* Show menu in columns */
-        .menu-open nav ul {
-            display: flex;
-        }
+    /* Show menu in columns */
+    .menu-open nav ul {
+        display: flex;
+    }
 
-        /* Toggle button for closing */
-        .menu-open .menu-icon {
-            display: none;
-        }
+    /* Toggle button for closing */
+    .menu-open .menu-icon {
+        display: none;
+    }
 
-        .menu-open .close-icon {
-            display: inline-block;
-        } 
+    .menu-open .close-icon {
+        display: inline-block;
+    }
