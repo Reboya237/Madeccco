@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MADECC Blog Post</title>
+    <link rel="icon" href="fav.png" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -77,6 +78,98 @@
             margin-top: 0;
         }
     </style>
+
+<style>
+    /* Slider container */
+    .slider-container {
+        position: relative;
+        max-width: 100%;
+        margin: auto;
+        margin-left: 30px;
+        margin-right:  30px;
+  
+    }
+    
+    /* Hide all slides by default */
+    .slides {
+        display: none;
+    }
+    
+    /* Image styling */
+    .slider-image {
+        width: 100%;
+        height: auto;
+    }
+    
+    /* Text/caption overlay on the image */
+    .text {
+        color: #fff;
+        font-size: 16px;
+        padding: 10px;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Next & previous buttons */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+    
+    /* Position next button to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+    
+    /* Dots */
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+    
+    .active, .dot:hover {
+        background-color: #717171;
+    }
+    
+    /* Fading animation */
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+    
+    @-webkit-keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+    }
+    
+    @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+    }
+    
+        </style>
+
 </head>
 <body>
     <header>
@@ -93,6 +186,43 @@
             <p class="hidden-content">In addition to our innovative design techniques, we offer comprehensive project management services. Our team works closely with clients and contractors to ensure that every aspect of the project is handled with precision and care. From initial design to final execution, MADECC is committed to delivering excellence at every stage.</p>
             <button class="read-more" onclick="toggleContent()">Read More</button>
         </div>
+
+        <!-- Image Slider -->
+  <div class="slider-container">
+    <div class="slides fade">
+        <img src="img1 (4).jpg" alt="Image 1" class="slider-image">
+        <div class="text">Cutting off the top soil to ease the realization of the given project.</div>
+    </div>
+    <div class="slides fade">
+        <img src="img1 (3).webp" alt="Image 2" class="slider-image">
+        <div class="text">MADECC team members</div>
+    </div>
+    <div class="slides fade">
+        <img src="img1 (2).webp" alt="Image 3" class="slider-image">
+        <div class="text">Exterior Rendering</div>
+    </div>
+    <div class="slides fade">
+      <img src="img1 (5).webp" alt="Image 3" class="slider-image">
+      <div class="text">Well customize interior design and user friendly dinning section of a residential building.</div>
+  </div>
+  <div class="slides fade">
+    <img src="img1 (6).jpg" alt="Image 3" class="slider-image">
+    <div class="text">Kitchen equipements positioning.</div>
+</div>
+
+    <!-- Next and Previous Buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<!-- Dots for navigation -->
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span> 
+</div>
 
         <div class="contact-info">
             <h3>Contact Us</h3>
@@ -117,5 +247,39 @@
             }
         }
     </script>
+
+<script>
+    let slideIndex = 1;
+  
+  showSlides(slideIndex);
+  
+  
+  // Next/previous controls
+  function plusSlides(n) {
+  showSlides(slideIndex += n);
+  }
+  
+  // Thumbnail image controls
+  function currentSlide(n) {
+  showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("slides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+  slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+  dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  }
+  
+  </script>
 </body>
 </html>
