@@ -161,6 +161,20 @@
   }
   
       </style>
+	<style>
+        /* WhatsApp Button Positioning */
+        .whatsapp-chat {
+            position: fixed;
+            bottom: 20px;  /* Adjust the distance from the bottom */
+            left: 20px;    /* Adjust the distance from the left */
+            z-index: 1000; /* Ensure it's above other elements */
+        }
+
+        .whatsapp-chat img {
+            width: 50px; /* Adjust the size of the button */
+            height: 50px;
+        }
+	</style>
 </head>
 
 <body>
@@ -808,5 +822,24 @@ dots[slideIndex-1].className += " active";
 }
 
 </script>
+
+	<!-- WhatsApp Chat Button -->
+    <a href="https://wa.me/+237683316486" target="_blank" class="whatsapp-chat">
+        <img src="https://web.whatsapp.com/img/favicon/1x/favicon.png" alt="Chat with us on WhatsApp">
+    </a>
+
+    <!-- Tawk.to Live Chat Script (Positioned automatically at bottom-right) -->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/YOUR_UNIQUE_ID/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+
 </body>
 </html>
