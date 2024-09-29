@@ -162,6 +162,20 @@
   
       </style>
 	<style>
+        /* WhatsApp Button Positioning */
+        .whatsapp-chat {
+            position: fixed;
+            bottom: 20px;  /* Adjust the distance from the bottom */
+            left: 20px;    /* Adjust the distance from the left */
+            z-index: 1000; /* Ensure it's above other elements */
+        }
+
+        .whatsapp-chat img {
+            width: 50px; /* Adjust the size of the button */
+            height: 50px;
+        }
+	</style>
+	<style>
         /* Styling for all social chat buttons */
         .social-chat {
             position: fixed;
@@ -823,8 +837,8 @@ dots[slideIndex-1].className += " active";
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat with us on WhatsApp">
     </a>
     <!-- Facebook Messenger Chat Button -->
-    <a href="https://www.facebook.com/madeccco237?mibextid=ZbWKwL" target="_blank" class="social-chat facebook">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Facebook_icon.png" alt="Facebook Chat">
+    <a href="https://www.facebook.com/madeccco237" target="_blank" class="social-chat facebook">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Facebook_icon.svg" alt="Facebook Chat">
     </a>
 
     <!-- Instagram Chat Button -->
@@ -838,13 +852,13 @@ dots[slideIndex-1].className += " active";
     </a>
 
     <!-- TikTok Chat Button -->
-    <a href="https://www.tiktok.com/@craftedbymadecc?_t=8q8XqJ5V4dB&_r=1" target="_blank" class="social-chat tiktok">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.png" alt="TikTok Chat">
+    <a href="https://www.tiktok.com/@craftedbymadecc" target="_blank" class="social-chat tiktok">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg" alt="TikTok Chat">
     </a>
 
     <!-- Telegram Chat Button -->
-    <a href="https://t.me/@MADECC1" target="_blank" class="social-chat telegram">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.png" alt="Telegram Chat">
+    <a href="https://www.t.me/@MADECC1" target="_blank" class="social-chat telegram">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Chat">
     </a>
 
     <!-- Tawk.to Live Chat Script (Positioned automatically at bottom-right) -->
