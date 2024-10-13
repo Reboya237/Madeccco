@@ -130,6 +130,7 @@ section#about, section#services, section#portfolio, section#testimonials, sectio
     margin: 0px 10px 10px 25px;
     border-radius: 20px;
     box-shadow: inset 0 0 70px rgba(8, 24, 241, 0.884);
+    font-size: 15px;
 }
 
 .sidebar {
