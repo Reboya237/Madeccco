@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Your Purchase</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+          body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #ffffff, #e0e0e0);
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.thank-you-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-message {
+    color: red;
+    text-align: center;
+}
+
+.confirmation-message {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.customer-details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.customer-details th, .customer-details td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cta-buttons button, .link {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 15px;
+    text-decoration: none;
+}
+
+.cta-buttons button:hover, .link:hover {
+    background-color: darkblue;
+}
+
+.offers-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.social-share {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.social-icon {
+    margin: 0 10px;
+    text-decoration: none;
+    color: blue;
+}
+
+.payment-confirmation {
+    margin: 20px 0;
+}
+
+.contact-info {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+    
+    
+/* Styles for the Thank You Page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.thank-you-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Download Section */
+.download-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.download-section h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.download-section p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Download Button Style */
+.download-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #28a745; /* Thicker green color */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.download-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.download-btn:active {
+    background-color: #1e7e34; /* Even darker green on click */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+    </style>
+    <script>
+        const translations = {
+            // Example of translations (add your language translations here)
+            en: {
+                thankYou: "Thank You for Your Purchase!",
+                orderSummary: "Order Summary",
+                paymentConfirmation: "Payment Confirmation",
+                continueShopping: "Continue Shopping",
+                downloadInvoice: "Download Invoice",
+                viewOrder: "View Order",
+                visitBlog: "Visit Our Blog",
+                customerSupport: "Customer Support",
+                specialOffers: "Special Offers",
+                sharePurchase: "Share your purchase:"
+            },
+            es: {
+                thankYou: "¡Gracias por su compra!",
+                confirmation: "Su pedido ha sido confirmado y lo estamos procesando.",
+                orderSummary: "Resumen del pedido",
+                yourDetails: "Tus Detalles",
+                specialOffers: "Ofertas Especiales",
+                sharePurchase: "Comparte tu compra:",
+                paymentMethod: "Método de Pago:",
+                contactUs: "Contáctenos",
+                email: "Correo Electrónico:",
+                phone: "Teléfono:",
+                address: "Dirección:",
+                continueShopping: "Continuar Comprando",
+                downloadInvoice: "Descargar Factura",
+                viewOrder: "Ver Pedido",
+                visitBlog: "Visita Nuestro Blog",
+                customerSupport: "Soporte al Cliente"
+            },
+            fr: {
+                thankYou: "Merci pour votre achat!",
+                confirmation: "Votre commande a été confirmée et nous la traitons.",
+                orderSummary: "Résumé de la commande",
+                yourDetails: "Vos Détails",
+                specialOffers: "Offres Spéciales",
+                sharePurchase: "Partagez votre achat:",
+                paymentMethod: "Méthode de Paiement:",
+                contactUs: "Contactez-nous",
+                email: "Email:",
+                phone: "Téléphone:",
+                address: "Adresse:",
+                continueShopping: "Continuer vos achats",
+                downloadInvoice: "Télécharger la Facture",
+                viewOrder: "Voir la Commande",
+                visitBlog: "Visitez Notre Blog",
+                customerSupport: "Service Client"
+            },
+            // Add other languages here
+        };
+
+        function switchLanguage(language) {
+            document.querySelector(".main-message").innerText = translations[language].thankYou;
+            document.querySelector(".customer-details h2").innerText = translations[language].orderSummary;
+            document.querySelector(".payment-confirmation h2").innerText = translations[language].paymentConfirmation;
+            document.querySelector(".cta-buttons button:nth-child(1)").innerText = translations[language].continueShopping;
+            document.querySelector(".cta-buttons button:nth-child(2)").innerText = translations[language].downloadInvoice;
+            document.querySelector(".cta-buttons button:nth-child(3)").innerText = translations[language].viewOrder;
+            document.querySelector(".cta-buttons a:nth-child(4)").innerText = translations[language].visitBlog;
+            document.querySelector(".cta-buttons a:nth-child(5)").innerText = translations[language].customerSupport;
+            document.querySelector(".offers-section h2").innerText = translations[language].specialOffers;
+            document.querySelector(".social-share p").innerText = translations[language].sharePurchase;
+        }
+    
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        function displayOrderDetails() {
+            const customerName = getParameterByName('name');
+            const orderNumber = getParameterByName('order');
+            const customerEmail = getParameterByName('email');
+            const transactionID = getParameterByName('transactionID');
+            const paymentMethod = getParameterByName('paymentMethod');
+            const totalAmount = getParameterByName('totalAmount');
+            const products = JSON.parse(decodeURIComponent(getParameterByName('products'))) || [];
+
+            // Update customer details
+            document.querySelector(".customer-details p:nth-child(1)").innerText = `Name: ${customerName}`;
+            document.querySelector(".customer-details p:nth-child(2)").innerText = `Order Number: ${orderNumber}`;
+            document.querySelector(".customer-details p:nth-child(3)").innerText = `Email: ${customerEmail}`;
+
+            // Update payment details
+            document.querySelector(".payment-confirmation p:nth-child(1)").innerText = `Payment Method: ${paymentMethod}`;
+            document.querySelector(".payment-confirmation p:nth-child(2)").innerText = `Transaction ID: ${transactionID}`;
+            document.querySelector(".payment-confirmation p:nth-child(3)").innerText = `Total Amount: ${totalAmount}`;
+
+            // Update product details
+            const productTable = document.querySelector(".customer-details table tbody");
+            products.forEach(product => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${product.name}</td>
+                    <td>${product.quantity}</td>
+                    <td>${product.price}</td>
+                `;
+                productTable.appendChild(row);
+            });
+        }
+
+        window.onload = displayOrderDetails;
+    </script>
+    <script>
+         function updateDownloadLink() {
+    const productName = getParameterByName('product');  // Assuming product name is passed in the URL
+
+    let downloadLink = document.querySelector(".download-btn");
+    if (productName === 'Product1') {
+        downloadLink.href = 'path-to-product1-file.zip';
+    } else if (productName === 'Product2') {
+        downloadLink.href = 'path-to-product2-file.pdf';
+    } else {
+        downloadLink.href = 'https://docs.google.com/document/d/1XtK9Fcj_pMx497pJl5pjE3ss4lfYOvEAaTf9hld-5Fw/edit?usp=drivesdk';
+    }
+}
+
+window.onload = updateDownloadLink;
+    </script>
+</head>
+<body>
+    <div class="thank-you-container">
+        <h1 class="main-message">Thank You for Your Purchase!</h1>
+        <p class="confirmation-message">Your order has been confirmed, and we are processing it.</p>
+
+        <div class="customer-details">
+            <h2>Order Summary</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                    <td>Sample Product</td>
+                    <td>1</td>
+                    <td>$99.99</td>
+                </tr>
+                </thead>
+                <tbody>
+                    <!-- Product rows will be added here dynamically -->
+                </tbody>
+            </table>
+
+            <h3>Your Details</h3>
+            <p>Name: John Doe</p>
+            <p>Order Number: #12345</p>
+            <p>Email: johndoe@example.com</p>
+        </div>
+
+        <div class="payment-confirmation">
+            <h2>Payment Confirmation</h2>
+            <p>Payment Method: PayPal</p>
+            <p>Transaction ID: ABC123456</p>
+            <p>Total Amount: $99.99</p>
+        </div>
+
+        <div class="cta-buttons">
+            <button onclick="window.location.href='https://www.madeccltd.online/sale-page'">Continue Shopping</button>
+            <a href="https://madeccltd.online/portfolio" class="link">Visit Our Blog</a>
+            <a href="https://madeccltd.online/get-intouch" class="link">Customer Support</a>
+        </div>
+    
+        <div class="social-share">
+            <p>Share your purchase:</p>
+            <a href="https://www.facebook.com/madeccco237?mibextid=ZbWKwL" class="social-icon">Facebook</a>
+            <a href="https://www.instagram.com/madeccltd?igsh=MTAyeHZ3ZW91OTRsdA==" class="social-share">Instagram</a>
+            <a href="https://x.com/KasahReboya?t=oF8c1FIyhnq1Gkh6CVIb-A&s=09" class="social-icon">Twitter</a>
+        </div>
+
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>Email: infomadeccconstruction@gmail.com</p>
+            <p>Email: info@madeccltd.online</p>
+            <p>Email: contact@madeccltd.online</p>
+            <p>Email: support@madeccltd.online</p>
+            <p>Email: hello@madeccltd.online</p>
+            <p>Phone: +237683316486</p>
+            <p>Phone: +237650320971</p>
+            <p>Address: Tradex, Mbankolo, Yaoundé, Cameroon</p>
+        </div>
+    </div>
+    <div class="download-section">
+    <h3>Download Your Purchased material(s) Below</h3>
+    <p>Thank you for your purchase. Click the button below to download your material(s):</p>
+    <a href="https://docs.google.com/document/d/1XtK9Fcj_pMx497pJl5pjE3ss4lfYOvEAaTf9hld-5Fw/edit?usp=drivesdk" class="download-btn" download>Download Now</a>
+</div>
+</body>
+</html>
